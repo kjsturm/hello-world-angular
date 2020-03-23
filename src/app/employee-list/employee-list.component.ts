@@ -6,6 +6,7 @@ import { UtilityService } from '../utility.service';
   selector: 'employee-list',
   template: `
       <h2>Employee List</h2>
+      <h3 style='color:red; font-weight:400'>{{errorMsg}}</h3>
       <ul *ngFor="let employee of employees">
       <li>{{employee.name}}
       </ul>
@@ -17,16 +18,15 @@ import { UtilityService } from '../utility.service';
 })
 export class EmployeeListComponent implements OnInit {
 
-  public time;
-
+  
   constructor(private _employeeService: EmployeeService, private _utilityService: UtilityService) { }
 
   ngOnInit(): void {
-    this._employeeService.getEmployees().subscribe(data => this.employees = data);
-
-    //this.time = setTimeout(this._utilityService.startTime, 500);
+    this._employeeService.getEmployees().subscribe(data => this.employees = data, error => this.errorMsg = error.message);    
   }
 
   public employees = [];
+
+  public errorMsg;
 
 }
