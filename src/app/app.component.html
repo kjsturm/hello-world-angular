@@ -1,48 +1,59 @@
 <style>
-  :host {    
-    font-family:"Segoe UI", 
-                Roboto, 
-                Helvetica, 
-                Arial, 
-                sans-serif;
+  :host {
+    font-family: "Segoe UI",
+      Roboto,
+      Helvetica,
+      Arial,
+      sans-serif;
     font-size: .9em;
     color: rgb(141, 103, 103);
-    background-color:greenyellow;
-    box-sizing: border-box;    
+    background-color: greenyellow;
+    box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;    
+    -moz-osx-font-smoothing: grayscale;
   }
 
- div{
-    width:calc(100% - 26px);
+  div {
+    width: calc(100% - 26px);
     padding: 10px;
-    margin:1px; 
+    margin: auto;
     border: 2px solid pink;
     background-color: #0000ff22;
     text-align: center;
-    border-radius: 4px;    
- }
+    border-radius: 4px;
+  }
+  #marquee-container{
+    margin:auto;
+    padding: 0px;
+    width:calc(100% - 6px);    
+  }
+
+  .employee {
+    width:calc(100% - 56px);
+    padding: 4px 0px 10px 50px;
+    text-align: left;
+  }
 
   p {
-    margin: 0;    
+    margin: 0;
   }
 </style>
-<div id = "controlPanel">
+<div id="controlPanel">
   Control Panel
   <app-control-panel></app-control-panel>
 </div>
 
-<div id = "employeeList" style ="text-align: left; padding: 4px 0px 10px 100px;">  
- <employee-list>employee list</employee-list>
+<div class = "employee" id="employeeList">
+  <employee-list>employee list</employee-list>
 </div>
 
-<div id = "employeeDetails" style ="text-align: left; padding: 4px 0px 10px 100px;">  
+<div class = "employee" id="employeeDetails">
   <employee-detail>employee details </employee-detail>
- </div>
+</div>
 
-<div id = "test"> 
+<div id="test">
   <h1>
-    {{title}}   
+    {{title}}
   </h1>
   <h2 style="font-size: 1.20em; font-weight: 400;">
     {{message}}
@@ -50,5 +61,11 @@
   <app-test (childEvent)="message=$event" [parentData]="name"></app-test>
 </div>
 
+<div id="marquee-container">
+  <app-marquee></app-marquee>
+</div>
 
+<!-- <div style="font-size: 1.8em; height: auto; padding: 0px 10px 0px 10px;">
+<marquee direction="left" scrolldelay="200" behavior="loop">ControlPointWeb scroll</marquee>
+</div> -->
 <router-outlet></router-outlet>

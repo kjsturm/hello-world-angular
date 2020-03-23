@@ -11,6 +11,7 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
 import { EmployeeService } from './employee.service';
 import { UtilityService } from './utility.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MarqueeComponent } from './marquee/marquee.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     TestComponent,
     ControlPanelComponent,
     EmployeeListComponent,
-    EmployeeDetailComponent
+    EmployeeDetailComponent,
+    MarqueeComponent
   ],
   imports: [
     BrowserModule,
