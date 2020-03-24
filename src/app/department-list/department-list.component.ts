@@ -5,8 +5,8 @@ import { DepartmentService } from '../department.service';
 @Component({
   selector: 'app-department-list',
   template: `
-  <div style="padding: 0px 0px 0px 25px; margin:0px 0px 0px 20px">
-  <h3>
+  <div style="padding: 10px 0px 0px 10px; margin:0px 0px 0px 0px">
+  <h3 style="padding: 10px 0px 0px 10px; margin:0px 0px 0px 0px">
   Department List
   </h3>
   <h3 style='color:red; font-weight:400'>{{errorMsg}}</h3>
