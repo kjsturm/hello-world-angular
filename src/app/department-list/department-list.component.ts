@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { DepartmentService } from '../department.service';
 
 @Component({
   selector: 'app-department-list',
@@ -8,8 +9,9 @@ import { Router } from '@angular/router';
   <h3>
   Department List
   </h3>
+  <h3 style='color:red; font-weight:400'>{{errorMsg}}</h3>
   <ul class="items">
-    <li (click)="onSelect(department)" *ngFor="let department of departments">
+    <li (click)="onSelect(department)" [class.selected]="isSelected(department)" *ngFor="let department of departments">
       <span class="badge">{{department.id}}</span> {{department.name}}
     </li>
   </ul>
@@ -19,21 +21,27 @@ import { Router } from '@angular/router';
 })
 export class DepartmentListComponent implements OnInit {
 
-  departments = [
-    {"id":1,"name":"Angular"},
-    {"id":2,"name":"Node"},
-    {"id":3,"name":"MongoDB"},
-    {"id":4,"name":"Ruby"},
-    {"id":5,"name":"BootStrap"},
-  ]
+  public selectedId;
 
-  constructor(private router: Router) { }
+  public departments = [];
+
+  public errorMsg;  
+
+  constructor(private route: ActivatedRoute, private router: Router, private _departmentService: DepartmentService) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      let id = parseInt(params.get('id'));
+      this.selectedId = id;});
+    this._departmentService.getDepartments().subscribe(data => this.departments = data, error => this.errorMsg = error.message); 
   }
 
   onSelect(department){
     this.router.navigate(['/departments', department.id]);
+  }
+
+  isSelected(department){
+    return department.id === this.selectedId;
   }
 
 }

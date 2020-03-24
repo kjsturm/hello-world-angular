@@ -9,20 +9,21 @@ import {
   HttpHandler,
   HttpEvent
 } from '@angular/common/http';
-import{IEmployee} from './employee';
+import{IDepartment} from './department';
 import { Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EmployeeService {
 
-  private _url: string ="/assets/data/employees.json";
+export class DepartmentService {
+
+  private _url: string ="/assets/data/departments.json";
 
   constructor(private http: HttpClient) { }
 
-  public getEmployees(): Observable<IEmployee[]>{       
-    return  this.http.get<IEmployee[]>(this._url); 
+  public getDepartments(): Observable<IDepartment[]>{       
+    return  this.http.get<IDepartment[]>(this._url); 
   }
   
 }
