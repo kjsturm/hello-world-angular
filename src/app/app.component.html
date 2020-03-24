@@ -32,18 +32,28 @@
     width:calc(100% - 56px);
     padding: 4px 0px 10px 50px;
     text-align: left;
+    margin-right: 0px;
   }
 
   p {
     margin: 0;
+  }
+  nav{    
+    margin:auto;
+    padding: 0px 10px 0px 0px;
   }
 </style>
 <div id="controlPanel">
   Control Panel
   <app-control-panel></app-control-panel>
 </div>
+<nav>
+  <a routerLink="/departments" routerLinkActive="active">Departments</a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a routerLink ="/employees" routerLinkActive="active">Employess</a>  
+</nav>
 
-<div class = "employee" id="employeeList">
+<!-- <div class = "employee" id="employeeList">
   <employee-list>employee list</employee-list>
 </div>
 
@@ -63,7 +73,7 @@
 
 <div id="marquee-container">
   <app-marquee></app-marquee>
-</div>
+</div> -->
 
 <!-- <div style="font-size: 1.8em; height: auto; padding: 0px 10px 0px 10px;">
 <marquee direction="left" scrolldelay="200" behavior="loop">ControlPointWeb scroll</marquee>
