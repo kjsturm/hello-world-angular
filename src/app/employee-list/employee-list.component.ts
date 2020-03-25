@@ -7,8 +7,10 @@ import { UtilityService } from '../utility.service';
   template: `
       <h2>Employee List</h2>
       <h3 style='color:red; font-weight:400'>{{errorMsg}}</h3>
-      <ul *ngFor="let employee of employees">
-      <li>{{employee.name}}
+      <ul class="items" *ngFor="let employee of employees">
+      <li><!--{{employee.name}}-->
+      <span class="badge">{{employee.name}}</span> <!--{{employee.age}}-->
+      </li>
       </ul>
   `,
   // templateUrl: './employee-list.component.html',

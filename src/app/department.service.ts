@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import {
   HttpClient,
+  HttpHeaders ,
   HttpInterceptor,
   HttpRequest,
   HttpResponse,
@@ -9,6 +10,7 @@ import {
   HttpHandler,
   HttpEvent
 } from '@angular/common/http';
+
 import{IDepartment} from './department';
 import { Observable, throwError } from 'rxjs';
 

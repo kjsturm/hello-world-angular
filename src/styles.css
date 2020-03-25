@@ -70,10 +70,11 @@ h1 {
     position: relative;
     left: 0;
     background-color: #EEE;
-    margin: .5em;
+    margin:auto; /*.5em;*/
     padding: .3em;
     height: 1.6em;
     border-radius: 4px;
+    vertical-align: middle;
   }
   .items li:hover {
     color: #607D8B;
@@ -109,9 +110,9 @@ h1 {
     background-color: #607D8B;
     line-height: 1em;
     position: relative;
-    left: -1px;
+    left: -3px;
     top: -4px;
-    height: 1.8em;
+    height: 1.55em;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }

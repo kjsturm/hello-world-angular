@@ -1,5 +1,16 @@
 import { Injectable } from '@angular/core';
 
+import {
+    HttpClient,
+    HttpHeaders ,
+    HttpInterceptor,
+    HttpRequest,
+    HttpResponse,
+    HttpErrorResponse,
+    HttpHandler,
+    HttpEvent
+  } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root'
 })
