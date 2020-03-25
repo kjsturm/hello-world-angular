@@ -16,6 +16,8 @@ import { MarqueeComponent } from './marquee/marquee.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DepartmentDetailComponent } from './department-detail/department-detail.component';
 import { DepartmentService } from './department.service';
+import { DepartmentOverviewComponent } from './department-overview/department-overview.component';
+import { DepartmentContactComponent } from './department-contact/department-contact.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { DepartmentService } from './department.service';
     
     routingComponents,
     PageNotFoundComponent,
-    DepartmentDetailComponent
+    DepartmentDetailComponent,
+    DepartmentOverviewComponent,
+    DepartmentContactComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,9 @@ import { DepartmentService } from './department.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [EmployeeService, UtilityService, DepartmentService],
+  providers: [EmployeeService, 
+              UtilityService, 
+              DepartmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

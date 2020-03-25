@@ -6,7 +6,7 @@ import { DepartmentService } from '../department.service';
   selector: 'app-department-list',
   template: `
   <div style="padding: 10px 0px 0px 10px; margin:0px 0px 0px 0px">
-  <h3 style="padding: 10px 0px 0px 10px; margin:0px 0px 0px 0px">
+  <h3 style="padding: 10px 0px 0px 10px; margin:0px 0px 0px 0px; font-family:'Raleway', sans-serif;">
   Department List
   </h3>
   <h3 style='color:red; font-weight:400'>{{errorMsg}}</h3>
@@ -37,7 +37,8 @@ export class DepartmentListComponent implements OnInit {
   }
 
   onSelect(department){
-    this.router.navigate(['/departments', department.id]);
+    // this.router.navigate(['/departments', department.id]); //relative navigation method
+    this.router.navigate([department.id],{relativeTo: this.route});
   }
 
   isSelected(department){
